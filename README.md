@@ -3,6 +3,11 @@
 ## Instructor Project
 https://github.com/hugo-wsu/python-hafb
 
+### Sample scripts
+```buildoutcfg
+https://icarus.cs.weber.edu/~hvalle/hafb/
+```
+
 ## Local installations
 
 Login to system using:

@@ -1,1 +1,2 @@
-print("hello world")
+# Purpose: Say Hello to Waldo
+print("Hello Waldo")

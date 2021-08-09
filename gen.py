@@ -53,11 +53,20 @@ def run_pipeline():
         print(item)
 
 
+def get_squares():
+    squares = (num*num for num in range(1, 1001)) # Saves memory vs comprehension (with square brackets)
+    print(type(squares))
+    l_sq = list(squares)
+    print(f'The sum of the first 1000 square numbers is: {sum(l_sq)}')
+
+
 # --------------------------------------------------
 def main():
     """Make your noise here"""
-    run_distinct()
-    run_pipeline()
+    #run_distinct()
+    #run_pipeline()
+    # Task: Create a list of the first 1 million square numbers
+    get_squares()
 
 
 # --------------------------------------------------

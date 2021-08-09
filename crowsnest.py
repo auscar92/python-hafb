@@ -2,7 +2,7 @@
 """
 Author : t25 <auscar92@gmail.com>
 Date   : 8/9/2021
-Purpose:
+Purpose: Practice with strings
 """
 
 import argparse
@@ -31,9 +31,13 @@ def main():
 
     args = get_args()
     word = args.word
-    article = ''
-    if word == 'octopus':
-        article = 'an'
+    # article = 'a'
+    # if word[0].lower() in 'aeiou':
+    #     article = 'an'
+    # else:
+    #     article = 'a'
+
+    article = 'an' if word[0].lower() in 'aeiou' else 'a'
     print(f'Ahoy, Captain, {article} {word} off the starboard bow!')
 
 

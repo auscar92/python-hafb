@@ -22,11 +22,20 @@ def main():
     for item in r:
         print(item)
     # Create list out of ranges
-    l = list(range(5, 10))
+    l = list(range(5, 10)) + list(range(20, 25))
     print(l)
     print(type(l))
-    for item in r:
+    for item in l:
         print(item)
+    # Create list out of multiple ranges
+    # Ranges third optional parameter is the step size
+    l = list(range(0, 10, 2)) + list(range(20, 60, 3))
+    print(l)
+
+    # Enumerate
+    t = [6, 345, 67, 1, 99, 234]
+    for i, v in enumerate(t):
+        print(f'Index {i}, value {v}')
 
 # --------------------------------------------------
 if __name__ == '__main__':

@@ -5,7 +5,7 @@ https://github.com/hugo-wsu/python-hafb
 
 ### Sample scripts
 ```buildoutcfg
-https://icarus.cs.weber.edu/~hvalle/hafb/
+https://icarus.cs.weber.edu/~hvalle/hafb/<file.py>
 ```
 
 ## Local installations

@@ -13,37 +13,17 @@ def get_args():
     """Get command-line arguments"""
 
     parser = argparse.ArgumentParser(
-        description='Rock the Casbah',
+        description='Picnic game',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('positional',
+    parser.add_argument('item',
                         metavar='str',
-                        help='A positional argument')
+                        nargs='+',  # Plus means one or more arguments
+                        help='Item(s) to  bring on a picnic')
 
-    parser.add_argument('-a',
-                        '--arg',
-                        help='A named string argument',
-                        metavar='str',
-                        type=str,
-                        default='')
-
-    parser.add_argument('-i',
-                        '--int',
-                        help='A named integer argument',
-                        metavar='int',
-                        type=int,
-                        default=0)
-
-    parser.add_argument('-f',
-                        '--file',
-                        help='A readable file',
-                        metavar='FILE',
-                        type=argparse.FileType('r'),
-                        default=None)
-
-    parser.add_argument('-o',
-                        '--on',
-                        help='A boolean flag',
+    parser.add_argument('-s',
+                        '--sorted',
+                        help='Sort the items',
                         action='store_true')
 
     return parser.parse_args()
@@ -54,17 +34,27 @@ def main():
     """Make your noise here"""
 
     args = get_args()
-    str_arg = args.arg
-    int_arg = args.int
-    file_arg = args.file
-    flag_arg = args.on
-    pos_arg = args.positional
+    item = list(args.item)
+    print(item)
 
-    print(f'str_arg = "{str_arg}"')
-    print(f'int_arg = "{int_arg}"')
-    print('file_arg = "{}"'.format(file_arg.name if file_arg else ''))
-    print(f'flag_arg = "{flag_arg}"')
-    print(f'positional = "{pos_arg}"')
+    if args.sorted:
+        item.sort()
+
+    # 1 Item, just print item
+    # 2 Items: item1 and item2
+    # 3 or more Items: item1, item2, itemx, and itemLast
+    bringing = ' '
+    if len(item) == 1:
+        bringing = item[0]
+    elif len(item) == 2:
+        bringing = f'{item[0]} and {item[1]}'
+    elif len(item) > 2:
+        item[-1] = f'and {item[-1]}'
+        bringing = ', '.join(item)
+
+
+    # Print info
+    print(f'You are bringing {bringing}')
 
 
 # --------------------------------------------------

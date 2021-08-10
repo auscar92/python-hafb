@@ -12,7 +12,12 @@ class Note:
         """initialize a note with memo and optional
         space-separated tags. Automatically set the note's
         creation date and a unique id."""
-        pass
+        self._memo = memo
+        self._tags = tags
+        self._creation_date = datetime.date.today()
+        global last_id
+        last_id += 1
+        self._id = last_id
 
     def match(self, filter):
         """Determine if this note matches the filter
@@ -20,7 +25,7 @@ class Note:
 
         Search is case sensitive and matches both text and
         tags."""
-        pass
+        return filter in self._memo or filter in self._tags
 
 
 class Notebook:
@@ -54,3 +59,17 @@ class Notebook:
         """Find all notes that match the given filter
         string."""
         pass
+
+
+def main():
+    n1 = Note('hello first')
+    n2 = Note('hello again')
+    print(n1._id, n1._memo)
+    print(n2._id, n2._memo)
+    print(n1.match('hello'))
+    print(n2.match('hi'))
+
+
+# --------------------------------------------------
+if __name__ == '__main__':
+    main()

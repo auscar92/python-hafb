@@ -51,6 +51,16 @@ def main():
             inner.append((y*3))
         outer.append(inner)
     print(outer)
+    # 2D Comprehension
+    outer = [[y*3 for y in range(x)] for x in range(10)]
+    print(outer)
+    #
+    g = ((x, y) for x in range(5) for y in range(5))
+    print(g)
+    print(list(g))
+
+    s = set((2, 4, 6, 8, 2, 4))
+    print(s)
 
 
 # --------------------------------------------------

@@ -12,6 +12,11 @@ def main():
     # Map() is lazy. It only produces the values as they are needed
     m = map(ord, 'The purple Weber State')
     print(m)
+    print(next(m)) # one at a time, "on demand"
+    print(next(m))
+    print(next(m))
+    # print(list(m))
+    print(list(map(ord, 'The purple Weber State')))
 
 
 # --------------------------------------------------

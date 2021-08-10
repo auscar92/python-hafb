@@ -47,7 +47,6 @@ class Notebook:
                 return note
         return None
 
-
     def modify_memo(self, note_id, memo):
         """Find the note with the given id and change its
         memo to the given value."""

@@ -6,6 +6,10 @@ Purpose: Review the map() function
 """
 
 
+def combine(size, color, animal):
+    return f'{size} {color} {animal}'
+
+
 # --------------------------------------------------
 def main():
     """Make your noise here"""
@@ -17,6 +21,18 @@ def main():
     print(next(m))
     # print(list(m))
     print(list(map(ord, 'The purple Weber State')))
+    # or use the loop
+    for o in  map(ord, 'The purple Weber state'):
+        print(o)
+
+    # Multiple mapping
+    sizes = ['small', 'medium', 'large']
+    colors = ['green', 'blue', 'red']
+    animals = ['cow', 'dog', 'cat']
+    # Create a list from a map
+    print(list(map(combine, sizes, colors, animals)))
+    # Comprehension
+    print([str(i) for i in range(5)])
 
 
 # --------------------------------------------------

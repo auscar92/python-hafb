@@ -30,9 +30,13 @@ def main():
     colors = ['green', 'blue', 'red']
     animals = ['cow', 'dog', 'cat']
     # Create a list from a map
-    print(list(map(combine, sizes, colors, animals)))
+    #print(list(map(combine, sizes, colors, animals)))
     # Comprehension
     print([str(i) for i in range(5)])
+    # Map
+    print(list(map(str, range(5))))
+    # Generator
+    print(list(str(i) for i in range(5)))
 
 
 # --------------------------------------------------

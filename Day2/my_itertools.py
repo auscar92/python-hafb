@@ -35,6 +35,7 @@ def main():
         print(f'minimum = {min(temp):4.1f}, maximum = {max(temp):4.1f}, and avg = {(sum(temp)/len(temp)):4.1f}')
 
 
+
 # --------------------------------------------------
 if __name__ == '__main__':
     main()

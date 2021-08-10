@@ -12,10 +12,19 @@ class SortedSet:
         Create a sorted list , regardless of which iterable object you pass
         :param items: list of items
         """
-        self._items = sorted(items) if items is not None else []
+        self._items = sorted(set(items)) if items is not None else []
 
     def __contains__(self, item):
         return item in self._items
+
+    def __len__(self):
+        return len(self._items)
+
+    def __iter__(self):
+        return iter(self._items)
+
+    def __getitem__(self, index):
+        return self._items[index]
 
 
 # --------------------------------------------------

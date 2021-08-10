@@ -27,6 +27,8 @@ def main():
         for y in range(x):
             points.append((x,y))
     print(points)
+    # Now use a comprehension
+    points = [(x, y) for x in range(5) for y in range(3)]
 
 
 # --------------------------------------------------

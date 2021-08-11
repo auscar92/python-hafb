@@ -33,7 +33,7 @@ def write_sequence(filename, num):
     :param num: maximum number to write
     :return: nothing
     """
-    with open(filename, mode='wt', encoding='utf-8') as f:
+    with open(filename, mode='wt', encoding='utf-8') as f: # Use with blocks to open and close files
         # Generate list and write list
         f.writelines(f'{r}\n' for r in islice(sequence(), num + 1))
 

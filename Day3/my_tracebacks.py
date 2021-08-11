@@ -10,7 +10,7 @@ import traceback
 
 def inclination(dx, dy):
     if dx == 0 or dy == 0:
-        raise InclinationError('Illegal input values')
+        raise InclinationError('Inclination cannot be vertical')
     return math.degrees(math.atan(dy/dx))
 
 

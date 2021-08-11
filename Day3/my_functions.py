@@ -5,6 +5,7 @@ Date   : 8/11/2021
 Purpose: Discuss callable objects, callable instances, and lambdas
 """
 import socket
+from pprint import pp
 
 
 # def resolve(host):
@@ -27,6 +28,23 @@ class Resolver:
         return host in self._cache
 
 
+def test_resolver():
+    # print(resolve) # functions are callable objects (First class citizens)
+    # print(resolve('weber.edu'))
+    # print(resolve('google.com'))
+    resolve = Resolver()
+    print(resolve('weber.edu'))
+    print(resolve('google.com'))
+    print(resolve.has_host('weber.edu'))
+    resolve.clear()
+    print(resolve('google.com'))
+    print(resolve.__call__('yahoo.com'))
+    # Call the class itself
+    print(Resolver)
+    # call the instance
+    print(resolve)
+
+
 def sequence_class(immutable):
     # if immutable:
     #     cls = tuple
@@ -47,28 +65,27 @@ def test_sequence_class():
     print(type(t))
 
 
-def test_resolver():
-    # print(resolve) # functions are callable objects (First class citizens)
-    # print(resolve('weber.edu'))
-    # print(resolve('google.com'))
-    resolve = Resolver()
-    print(resolve('weber.edu'))
-    print(resolve('google.com'))
-    print(resolve.has_host('weber.edu'))
-    resolve.clear()
-    print(resolve('google.com'))
-    print(resolve.__call__('yahoo.com'))
-    # Call the class itself
-    print(Resolver)
-    # call the instance
-    print(resolve)
+def test_lambda():
+    scientist = ['Marie Curie',
+                 'Albert Einstein',
+                 'Niel Bohr',
+                 'Dimitri Mendeleev',
+                 'Charles Darwin',
+                 'Isaac Newton']
+    # Call built-in sorted() with a lambda def
+    pp(sorted(scientist, key=lambda name:name.split()[-1]))
+
+
+def last_name(name):
+    return name.split()[-1]
 
 
 # --------------------------------------------------
 def main():
     """Make your noise here"""
     # test_Resolver
-    test_sequence_class()
+    #test_sequence_class()
+    test_lambda()
 
 
 # --------------------------------------------------

@@ -29,6 +29,21 @@ class SortedSet:
         result = self._items[index]
         return SortedSet(result) if isinstance(index, slice) else result
 
+    def __repr__(self):
+        return 'SortedSet({})'.format(repr(self._items) if self._items else '')
+
+    def __eq__(self, rhs):
+        """If not instance return NoImplemented rather than raise NoImplementedError"""
+        if not isinstance(rhs, SortedSet):
+            return NotImplemented
+        return self._items == rhs._items
+
+    def __ne__(self, rhs):
+        """If not instance return NoImplemented rather than raise NoImplementedError"""
+        if not isinstance(rhs, SortedSet):
+            return NotImplemented
+        return self._items != rhs._items
+
 
 # --------------------------------------------------
 def main():

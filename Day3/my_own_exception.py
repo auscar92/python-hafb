@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Author : t25 <me@wsu.com>
 Date   : 8/11/2021

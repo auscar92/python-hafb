@@ -34,10 +34,37 @@ def first_pandas():
     plt.show()
 
 
+def import_data_pandas(data):
+    # load data from csv files
+    data = pd.read_csv('countries.csv')
+    print(data.head())
+    print(f'Total of {len(set(data.country))} unique countries')
+    # Plot data from one country
+    afghanistan = data[data.country == 'Afghanistan']
+    plt.plot(afghanistan.year, afghanistan.gdpPerCapita)
+    plt.title("Afghanistan's GDP Per Capita")
+    plt.show()
+
+
+def continent_data(data):
+    # Compare Asia and Europe's GDP per capita
+    # Get the list of continents
+    continents = set(data.continent)
+    print(continents)
+    data_2007 = data[data.year == 2007]
+    asia_2007 = data_2007[data_2007.continent == 'Asia']
+    europe_2007 = data_2007[data_2007.continent == 'Europe']
+    # Print number of countries per continent
+    print(f'Asia countries: {len(set(asia_2007.country))}')
+    print(f'Europe countries: {len(set(europe_2007.country))}')
+
+
 # --------------------------------------------------
 def main():
     """Make your noise here"""
-    first_pandas()
+    data = pd.read_csv('countries.csv')
+    #import_data_pandas(data)
+    continent_data(data)
 
 
 # --------------------------------------------------
